@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sanwar Technologies</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Sanwar Technologies sets up, migrates and automates CRMs like HubSpot, Salesforce, Zoho and GoHighLevel, and builds custom CRM and workflow automation for growing businesses.">
+<meta property="og:title" content="Sanwar Technologies | CRM setup, automation and custom CRM">
+<meta property="og:description" content="Stop chasing leads. We set up, automate and custom-build CRMs so follow-ups, pipelines and reports run on their own.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#07080b">
+<link rel="icon" type="image/png" href="assets/logo-mark.png">
+<link rel="apple-touch-icon" href="assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Sanwar Technologies","description":"CRM setup and migration, workflow automation and custom CRM development.","areaServed":"Worldwide","serviceType":["CRM setup","CRM migration","Workflow automation","Custom CRM development"]}
+</script>
+<style>
+/* Layout: a pinned full-screen scroll film, then a single 1200px column of quiet sections on near-black glass. */
+:root{
+  --bg:#07080b; --bg-2:#0c0e14; --panel:rgba(255,255,255,.035); --line:rgba(160,180,220,.12);
+  --fg:#eef1f7; --muted:#97a0b3; --dim:#5d6578;
+  --accent:#3b82f6; --accent-2:#7cb1ff; --glow:rgba(59,130,246,.35);
+  --display:"Sora",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Instrument Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --wrap:1200px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.035em;line-height:1.02;margin:0;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-2)}
+.btn{display:inline-flex;align-items:center;gap:.5em;font:600 15px/1 var(--body);padding:14px 22px;border-radius:999px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 0 0 1px rgba(124,177,255,.4) inset,0 10px 40px -10px var(--glow)}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 0 0 1px rgba(124,177,255,.6) inset,0 14px 50px -10px var(--glow)}
+.btn-ghost{border-color:var(--line);color:var(--fg);background:rgba(255,255,255,.02)}
+.btn-ghost:hover{background:rgba(255,255,255,.06)}
+
+/* Nav */
+.nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(7,8,11,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;font:600 17px/1 var(--display);letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
+.logo{display:block;height:46px;width:auto;max-width:none}
+.logo-lg{height:60px}
+.brand-mark{width:26px;height:26px;border-radius:8px;background:radial-gradient(circle at 30% 30%,#9cc4ff,var(--accent) 55%,#1d4ed8);box-shadow:0 0 18px var(--glow);position:relative}
+.brand-mark::after{content:"";position:absolute;inset:7px;border:2px solid rgba(255,255,255,.85);border-radius:50%;border-right-color:transparent}
+.nav-links{display:flex;gap:28px;font-size:15px;color:var(--muted)}
+.nav-links a{text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--fg)}
+.nav .btn{padding:11px 18px;font-size:14px}
+@media (max-width:860px){.nav-links{display:none}}
+@media (max-width:420px){.nav .btn{padding:10px 14px;font-size:13px}.nav .logo{height:38px}}
+
+/* Film */
+.film{position:relative;height:700vh;background:var(--bg)}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+#film-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(7,8,11,.78) 0%,rgba(7,8,11,.45) 38%,rgba(7,8,11,0) 68%)}
+.scrim-hero{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 60% 55% at 50% 50%,rgba(7,8,11,.82),rgba(7,8,11,.45) 70%,rgba(7,8,11,.3));transition:opacity .5s}
+.cap h1,.cap h2,.cap p{text-shadow:0 2px 24px rgba(7,8,11,.7)}
+@media (max-width:700px){.scrim{background:linear-gradient(to top,rgba(7,8,11,.9) 0%,rgba(7,8,11,.5) 45%,rgba(7,8,11,0) 70%)}}
+.stage::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,transparent 45%,rgba(7,8,11,.75) 100%),linear-gradient(to bottom,transparent 55%,rgba(7,8,11,.85) 88%,var(--bg) 100%)}
+.cap{position:absolute;z-index:2;left:max(20px,env(safe-area-inset-left,0px));right:max(20px,env(safe-area-inset-right,0px));bottom:11vh;max-width:var(--wrap);margin:0 auto;opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .6s ease;pointer-events:none}
+.cap.on{opacity:1;transform:none;pointer-events:auto}
+.cap h2{font-size:clamp(38px,6vw,88px);max-width:11ch}
+.cap p{margin-top:18px;color:var(--muted);font-size:clamp(16px,1.6vw,20px);max-width:44ch}
+.cap .eyebrow{display:block;margin-bottom:18px}
+.cap-hero{bottom:auto;top:50%;transform:translateY(-40%);text-align:center}
+.cap-hero.on{transform:translateY(-50%)}
+.cap-hero h1{font-size:clamp(48px,9.5vw,148px);margin:0 auto;max-width:11ch}
+.cap-hero p{margin:22px auto 0}
+.cap-hero .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.ticks{position:absolute;z-index:3;right:max(20px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.ticks li{display:flex;align-items:center;justify-content:flex-end;gap:10px;list-style:none;transition:color .3s}
+.ticks li::after{content:"";width:18px;height:2px;border-radius:2px;background:currentColor;transition:width .3s}
+.ticks li.on{color:var(--fg)}
+.ticks li.on::after{width:34px;background:var(--accent)}
+.ticks{margin:0;padding:0}
+@media (max-width:700px){.ticks{display:none}}
+.scroll-hint{position:absolute;z-index:2;left:50%;bottom:28px;transform:translateX(-50%);font:500 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--dim);transition:opacity .4s}
+
+/* Sections */
+section.block{padding-block:clamp(90px,12vw,160px);position:relative;scroll-margin-top:90px}
+.head{display:grid;gap:18px;max-width:760px;margin-bottom:56px}
+.head h2{font-size:clamp(36px,5.2vw,68px)}
+.head p{color:var(--muted);font-size:19px;max-width:58ch}
+
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:920px){.services{grid-template-columns:1fr}}
+.card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid var(--line);border-radius:22px;padding:32px;overflow:hidden;min-width:0}
+.card::before{content:"";position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;background:radial-gradient(600px circle at var(--mx,50%) var(--my,0%),rgba(59,130,246,.14),transparent 40%);opacity:0;transition:opacity .3s}
+.card:hover::before{opacity:1}
+.svc-icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.3);margin-bottom:26px}
+.svc-icon svg{width:24px;height:24px;stroke:var(--accent-2);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:25px;letter-spacing:-.025em}
+.card > p{color:var(--muted);margin-top:12px}
+.ticklist{list-style:none;margin:24px 0 0;padding:20px 0 0;border-top:1px solid var(--line);display:grid;gap:10px;font-size:15px}
+.ticklist li{display:flex;gap:10px;align-items:flex-start}
+.ticklist li::before{content:"";flex:none;width:16px;height:16px;margin-top:4px;border-radius:50%;background:rgba(59,130,246,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%237cb1ff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+
+.platforms{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:820px){.platforms{grid-template-columns:1fr}}
+.plat-group{border:1px solid var(--line);border-radius:22px;padding:28px;background:var(--panel);min-width:0}
+.plat-group .eyebrow{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.chip{font:500 17px/1 var(--display);letter-spacing:-.01em;padding:16px 20px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.02);transition:border-color .2s,background .2s}
+.chip:hover{border-color:rgba(59,130,246,.5);background:rgba(59,130,246,.08)}
+.plat-note{margin-top:22px;color:var(--muted);font-size:15px}
+
+.timeline{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;padding-top:42px}
+.timeline::before,.timeline .fill{content:"";position:absolute;top:13px;left:0;height:2px;border-radius:2px;background:var(--line);width:100%}
+.timeline .fill{background:linear-gradient(90deg,var(--accent),var(--accent-2));width:calc(var(--tl,0) * 100%);box-shadow:0 0 14px var(--glow);transition:width .2s linear}
+.step{position:relative;min-width:0}
+.step::before{content:"";position:absolute;top:-36px;left:0;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--dim);transition:border-color .3s,box-shadow .3s,background .3s}
+.step.lit::before{border-color:var(--accent-2);background:var(--accent);box-shadow:0 0 16px var(--glow)}
+.step .num{font:500 12px/1 var(--mono);color:var(--dim);letter-spacing:.1em}
+.step h3{font-size:24px;margin-top:12px}
+.step p{color:var(--muted);font-size:15px;margin-top:10px}
+@media (max-width:900px){
+  .timeline{grid-template-columns:1fr;padding-top:0;padding-left:40px;gap:36px}
+  .timeline::before,.timeline .fill{top:0;left:6px;width:2px;height:100%}
+  .timeline .fill{height:calc(var(--tl,0) * 100%);width:2px}
+  .step::before{top:4px;left:-40px}
+}
+
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--panel)}
+.stat{padding:34px 28px;border-right:1px solid var(--line);min-width:0}
+.stat:last-child{border-right:0}
+.stat b{display:block;font:600 clamp(40px,4.6vw,60px)/1 var(--display);letter-spacing:-.04em;font-variant-numeric:tabular-nums;background:linear-gradient(180deg,#fff,#9fb7e0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{display:block;margin-top:12px;color:var(--muted);font-size:15px}
+@media (max-width:860px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+.sample{display:inline-block;margin-top:14px;font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+
+.cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:920px){.cases{grid-template-columns:1fr}}
+.case{display:flex;flex-direction:column;gap:14px}
+.case .tag{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2)}
+.case h3{font-size:23px}
+.case p{color:var(--muted);font-size:15px}
+.case .result{margin-top:auto;padding-top:18px;border-top:1px solid var(--line);display:flex;gap:24px;flex-wrap:wrap}
+.case .result div{font-size:13px;color:var(--muted)}
+.case .result b{display:block;font:600 26px/1.1 var(--display);color:var(--fg);letter-spacing:-.03em}
+
+.quotes{margin-top:20px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:920px){.quotes{grid-template-columns:1fr}}
+.quote{padding:28px;border-left:2px solid rgba(59,130,246,.5);background:linear-gradient(90deg,rgba(59,130,246,.06),transparent)}
+.quote p{font:400 18px/1.5 var(--display);letter-spacing:-.01em}
+.quote cite{display:block;margin-top:16px;font-style:normal;font-size:14px;color:var(--muted)}
+
+.faq{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:60px}
+@media (max-width:860px){.faq{grid-template-columns:1fr;gap:20px}}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:24px 0;font:500 19px/1.35 var(--display);letter-spacing:-.015em}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:300 28px/1 var(--body);color:var(--accent-2);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);padding-bottom:24px;max-width:62ch}
+
+.cta{text-align:center;overflow:hidden}
+.cta::before{content:"";position:absolute;left:50%;top:50%;width:900px;height:900px;max-width:140vw;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(59,130,246,.22),transparent 60%);pointer-events:none}
+.cta h2{position:relative;font-size:clamp(42px,7vw,100px);max-width:13ch;margin:0 auto}
+.cta p{position:relative;color:var(--muted);font-size:19px;margin:24px auto 0;max-width:46ch}
+.cta .btn{position:relative;margin-top:36px}
+
+.cal-shell{position:relative;border:1px solid var(--line);border-radius:22px;background:var(--panel);overflow:hidden;min-height:640px}
+.cal-inline{width:100%;height:700px;overflow:auto}
+.cal-fallback{position:absolute;inset:0;display:none;place-content:center;justify-items:center;gap:18px;text-align:center;padding:24px;color:var(--muted)}
+.cal-failed:not(.cal-ready) .cal-fallback{display:grid}
+.cal-failed:not(.cal-ready) .cal-inline{height:0}
+.cal-failed:not(.cal-ready) .cal-shell{min-height:240px}
+@media (max-width:700px){.cal-inline{height:760px}}
+.contact{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:60px}
+@media (max-width:860px){.contact{grid-template-columns:1fr;gap:36px}}
+.contact-info{display:grid;gap:26px;align-content:start}
+.contact-info .row span{display:block;font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+.contact-info .row div{font-size:18px;user-select:all}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form .full{grid-column:1/-1}
+@media (max-width:560px){form{grid-template-columns:1fr}}
+label{display:grid;gap:8px;font-size:14px;color:var(--muted);min-width:0}
+input,select,textarea{font:inherit;font-size:16px;color:var(--fg);background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:14px 16px;width:100%;transition:border-color .2s,background .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);background:rgba(59,130,246,.06)}
+textarea{min-height:130px;resize:vertical}
+select option{background:var(--bg-2)}
+.form-msg{grid-column:1/-1;font-size:15px;color:var(--accent-2);min-height:1.4em}
+
+footer{border-top:1px solid var(--line);padding-block:56px 40px;color:var(--muted);font-size:15px}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+@media (max-width:820px){.foot{grid-template-columns:1fr 1fr}}
+.foot h4{margin:0 0 14px;font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.foot a{text-decoration:none}.foot a:hover{color:var(--fg)}
+.foot .about{max-width:34ch;margin-top:16px}
+.legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:48px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--dim)}
+
+.reveal{transition:opacity .8s ease,transform .8s ease}
+.js .reveal.pre{opacity:.001;transform:translateY(28px)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img class="logo" src="assets/logo-full.png" alt="Sanwar Technologies" width="691" height="217"></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services">Services</a><a href="#platforms">Platforms</a><a href="#process">Process</a><a href="#work">Work</a><a href="#book">Contact</a>
+    </nav>
+    <a class="btn btn-primary" href="https://cal.com/hamza-manzoor-peqlsi/15min" target="_blank" rel="noopener" data-book-call data-cal-link="hamza-manzoor-peqlsi/15min" data-cal-namespace="15min" data-cal-config='{"layout":"month_view"}'>Book a free call</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ===== SCROLL FILM ===== -->
+  <section class="film" id="film" aria-label="How Sanwar Technologies turns scattered work into an automated CRM">
+    <div class="stage">
+      <canvas id="film-canvas" aria-hidden="true"></canvas>
+      <div class="scrim" aria-hidden="true"></div><div class="scrim-hero" id="scrim-hero" aria-hidden="true"></div>
+
+      <div class="cap cap-hero on" data-in="-0.2" data-out="0.075">
+        <span class="eyebrow">CRM setup · Automation · Custom CRM</span>
+        <h1>Your business, on autopilot.</h1>
+        <p>We set up, connect and automate your CRM so leads, deals and follow-ups move without anyone chasing them.</p>
+        <div class="ctas"><a class="btn btn-primary" href="https://cal.com/hamza-manzoor-peqlsi/15min" target="_blank" rel="noopener" data-book-call data-cal-link="hamza-manzoor-peqlsi/15min" data-cal-namespace="15min" data-cal-config='{"layout":"month_view"}'>Book a free call</a><a class="btn btn-ghost" href="#services">See services</a></div>
+      </div>
+      <div class="cap" data-in="0.08" data-out="0.175">
+        <span class="eyebrow">01 · Chaos</span>
+        <h2>Leads in five places. Follow-ups in none.</h2>
+        <p>Sticky notes, spreadsheets, inboxes and WhatsApp chats. Every lost lead started somewhere in here.</p>
+      </div>
+      <div class="cap" data-in="0.2" data-out="0.355">
+        <span class="eyebrow">02 · Order</span>
+        <h2>One place for everything.</h2>
+        <p>We pull your contacts, deals and history out of the clutter and into a single, clean CRM.</p>
+      </div>
+      <div class="cap" data-in="0.385" data-out="0.54">
+        <span class="eyebrow">03 · Assembly</span>
+        <h2>Built in layers, around your team.</h2>
+        <p>Contacts, pipeline, tasks and reports, each shaped to the way you already sell.</p>
+      </div>
+      <div class="cap" data-in="0.57" data-out="0.725">
+        <span class="eyebrow">04 · Connection</span>
+        <h2>Every tool, talking to each other.</h2>
+        <p>Email, WhatsApp, web forms, calendars and invoicing, wired straight into your CRM.</p>
+      </div>
+      <div class="cap" data-in="0.75" data-out="0.84">
+        <span class="eyebrow">05 · Automation</span>
+        <h2>Work that runs itself.</h2>
+        <p>A lead arrives, a deal moves stage, a follow-up goes out. Nobody had to remember to do it.</p>
+      </div>
+      <div class="cap" data-in="0.865" data-out="1.2">
+        <span class="eyebrow">06 · Calm</span>
+        <h2>Built around how you work.</h2>
+        <p>Your numbers in one view, growing while your team spends its time on customers.</p>
+      </div>
+
+      <ol class="ticks" id="ticks" aria-hidden="true">
+        <li><span>Chaos</span></li><li><span>Order</span></li><li><span>Assembly</span></li><li><span>Connection</span></li><li><span>Automation</span></li><li><span>Calm</span></li>
+      </ol>
+      <div class="scroll-hint" id="hint">Scroll</div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Services</span>
+        <h2>Three ways we take busywork off your plate.</h2>
+        <p>Start with a clean setup, automate what you already do, or have us build a CRM that fits a process no off-the-shelf tool does.</p>
+      </div>
+      <div class="services">
+        <article class="card reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7"/><path d="M17 15l2 2 3-4"/></svg></div>
+          <h3>CRM Setup &amp; Migration</h3>
+          <p>A CRM configured for your sales process from day one, with your existing data moved in cleanly.</p>
+          <ul class="ticklist">
+            <li>Pipelines, stages and custom fields</li>
+            <li>Data cleanup and de-duplication</li>
+            <li>Migration from spreadsheets or another CRM</li>
+            <li>User roles, permissions and team training</li>
+          </ul>
+        </article>
+        <article class="card reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M7.3 11l9.4-5M7.3 13l9.4 5"/></svg></div>
+          <h3>Workflow Automation</h3>
+          <p>The repetitive steps between your tools handled automatically, so nothing waits on a person to remember it.</p>
+          <ul class="ticklist">
+            <li>Lead capture from forms, ads and WhatsApp</li>
+            <li>Auto-assignment and follow-up sequences</li>
+            <li>Quotes, invoices and onboarding flows</li>
+            <li>Zapier, Make and n8n integrations</li>
+          </ul>
+        </article>
+        <article class="card reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg></div>
+          <h3>Custom CRM Development</h3>
+          <p>A CRM built for your exact workflow when off-the-shelf tools force you into workarounds.</p>
+          <ul class="ticklist">
+            <li>Custom objects, dashboards and portals</li>
+            <li>APIs connected to your existing systems</li>
+            <li>Role-based access and audit trails</li>
+            <li>Hosted, maintained and supported</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PLATFORMS ===== -->
+  <section class="block" id="platforms" style="padding-top:0">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Platforms</span>
+        <h2>We work in the tools you already pay for.</h2>
+        <p>Already on a CRM? We'll fix and extend it. Choosing one? We'll recommend the right fit for your size and budget.</p>
+      </div>
+      <div class="platforms">
+        <div class="plat-group reveal">
+          <span class="eyebrow">CRM platforms</span>
+          <div class="chips"><span class="chip">HubSpot</span><span class="chip">Salesforce</span><span class="chip">Zoho CRM</span><span class="chip">Attio</span><span class="chip">Pipedrive</span><span class="chip">GoHighLevel</span></div>
+          <p class="plat-note">Setup, migration, cleanup, custom properties, reporting and training.</p>
+        </div>
+        <div class="plat-group reveal">
+          <span class="eyebrow">Automation platforms</span>
+          <div class="chips"><span class="chip">Zapier</span><span class="chip">Make</span><span class="chip">n8n</span></div>
+          <p class="plat-note">Multi-step workflows across email, WhatsApp, forms, calendars, accounting and your own APIs. Self-hosted n8n when you need full control of your data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="block" id="process" style="padding-top:0">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Process</span>
+        <h2>From messy to automated in five steps.</h2>
+        <p>Most setups go live in two to six weeks, depending on how much data and how many tools are involved.</p>
+      </div>
+      <div class="timeline" id="timeline">
+        <i class="fill" aria-hidden="true"></i>
+        <div class="step"><span class="num">STEP 1</span><h3>Discover</h3><p>A free call to map how leads come in, where they get stuck and what your team does by hand today.</p></div>
+        <div class="step"><span class="num">STEP 2</span><h3>Design</h3><p>A written blueprint of your pipeline, fields, automations and integrations, agreed before we build.</p></div>
+        <div class="step"><span class="num">STEP 3</span><h3>Build</h3><p>We configure or develop the CRM, migrate your data and test it with real records.</p></div>
+        <div class="step"><span class="num">STEP 4</span><h3>Automate</h3><p>Workflows go live one by one, with alerts so you can see every automation working.</p></div>
+        <div class="step"><span class="num">STEP 5</span><h3>Support</h3><p>Training for your team, documentation, and ongoing support as your business changes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESULTS ===== -->
+  <!-- EDIT: replace these sample figures with your real numbers, then remove the "Sample figures" label. -->
+  <section class="block" id="results" style="padding-top:0">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Results</span>
+        <h2>What changes once the CRM does the chasing.</h2>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><b data-count="1200" data-suffix="+">1,200+</b><span>Hours of manual work saved per year</span></div>
+        <div class="stat"><b data-count="50" data-suffix="k+">50k+</b><span>Leads tracked across client CRMs</span></div>
+        <div class="stat"><b data-count="5" data-prefix="&lt;" data-suffix=" min">&lt;5 min</b><span>Average first response to new leads</span></div>
+        <div class="stat"><b data-count="40" data-suffix="+">40+</b><span>CRMs set up and automated</span></div>
+      </div>
+      <span class="sample">Sample figures</span>
+    </div>
+  </section>
+
+  <!-- ===== WORK ===== -->
+  <!-- EDIT: replace these example case studies and quotes with real client work. -->
+  <section class="block" id="work" style="padding-top:0">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Work</span>
+        <h2>Recent projects.</h2>
+        <p>A few examples of the problems we solve. <span class="sample" style="margin:0">Example projects</span></p>
+      </div>
+      <div class="cases">
+        <article class="card case reveal">
+          <span class="tag">Real estate · HubSpot</span>
+          <h3>Portal leads answered in minutes, not days</h3>
+          <p>Leads from three property portals and a website form now land in one HubSpot pipeline, get assigned to an agent and receive a WhatsApp reply automatically.</p>
+          <div class="result"><div><b>3 → 1</b>lead inboxes</div><div><b>4 min</b>first reply</div></div>
+        </article>
+        <article class="card case reveal">
+          <span class="tag">Clinic · GoHighLevel + n8n</span>
+          <h3>Bookings, reminders and reviews on autopilot</h3>
+          <p>Appointment booking, SMS reminders and post-visit review requests run without front-desk effort, synced to the clinic calendar.</p>
+          <div class="result"><div><b>−35%</b>no-shows</div><div><b>20 h</b>saved weekly</div></div>
+        </article>
+        <article class="card case reveal">
+          <span class="tag">Distribution · Custom CRM</span>
+          <h3>A custom CRM for a field sales team</h3>
+          <p>A purpose-built CRM with routes, orders and invoice sync, replacing a set of shared spreadsheets used by 25 sales reps.</p>
+          <div class="result"><div><b>25</b>reps onboarded</div><div><b>0</b>spreadsheets left</div></div>
+        </article>
+      </div>
+      <div class="quotes">
+        <figure class="quote reveal" style="margin:0"><p>"We stopped losing leads between WhatsApp and the spreadsheet. Everything is in one place now and the follow-ups go out on their own."</p><cite>Owner, real-estate agency</cite></figure>
+        <figure class="quote reveal" style="margin:0"><p>"They understood our process before touching the software. The automations fit how we already work."</p><cite>Operations manager, healthcare clinic</cite></figure>
+        <figure class="quote reveal" style="margin:0"><p>"Our reps finally update the CRM because it's faster than not updating it."</p><cite>Sales director, distribution company</cite></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="block" id="faq" style="padding-top:0">
+    <div class="wrap faq">
+      <div class="head reveal" style="margin:0">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions we hear on every first call.</h2>
+      </div>
+      <div class="reveal">
+        <details><summary>Which CRM should I use?</summary><p>It depends on your team size, budget and how you sell. We compare options such as HubSpot, Zoho, Pipedrive and GoHighLevel against your process on the discovery call and recommend one, with no reseller bias.</p></details>
+        <details><summary>Can you move my data from spreadsheets or my old CRM?</summary><p>Yes. We clean, de-duplicate and map your contacts, companies, deals and history, then migrate and verify everything before you switch over.</p></details>
+        <details><summary>How long does a project take?</summary><p>A standard CRM setup takes two to three weeks. Larger automation projects take four to six weeks, and custom CRM builds are scoped individually.</p></details>
+        <details><summary>Do I need a custom CRM or an off-the-shelf one?</summary><p>Most businesses are best served by an off-the-shelf CRM with good automation. We recommend custom development only when your workflow genuinely doesn't fit, or when licence costs at your team size make a custom build cheaper.</p></details>
+        <details><summary>What happens after launch?</summary><p>You get training, written documentation and a support period. Many clients keep a monthly support plan so we can add automations and adjust the CRM as they grow.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="block cta">
+    <div class="wrap">
+      <h2 class="reveal">Stop chasing leads. Let your CRM do it.</h2>
+      <p class="reveal">Book a free 15-minute call. We'll map your current process and show you what can be automated first.</p>
+      <a class="btn btn-primary reveal" href="https://cal.com/hamza-manzoor-peqlsi/15min" target="_blank" rel="noopener" data-book-call data-cal-link="hamza-manzoor-peqlsi/15min" data-cal-namespace="15min" data-cal-config='{"layout":"month_view"}'>Book a free call</a>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <!-- ===== BOOK A CALL (Cal.com inline calendar) ===== -->
+  <section class="block" id="book" style="padding-top:0">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Contact</span>
+        <h2>Pick a time for a free call.</h2>
+        <p>15 minutes on video. Tell us how leads come in today and we'll show you what to automate first.</p>
+      </div>
+      <div class="cal-shell reveal">
+        <div id="my-cal-inline-15min" class="cal-inline"></div>
+        <div class="cal-fallback" id="cal-fallback">
+          <p>The booking calendar didn't load here.</p>
+          <a class="btn btn-primary" href="https://cal.com/hamza-manzoor-peqlsi/15min" target="_blank" rel="noopener">Open the booking calendar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contact" style="padding-top:0">
+    <div class="wrap contact">
+      <div class="contact-info reveal">
+        <div class="head" style="margin:0">
+          <span class="eyebrow">Prefer to write?</span>
+          <h2>Tell us what's slowing you down.</h2>
+          <p>We reply within one business day.</p>
+        </div>
+        <!-- EDIT: put your real email and WhatsApp number here -->
+        <div class="row"><span>Email</span><div>hello@sanwartechnologies.com</div></div>
+        <div class="row"><span>WhatsApp</span><div>+00 000 000 0000</div></div>
+      </div>
+      <form id="contact-form" class="reveal" novalidate>
+        <label for="f-name">Name<input id="f-name" name="name" autocomplete="name" required></label>
+        <label for="f-email">Work email<input id="f-email" name="email" type="email" autocomplete="email" required></label>
+        <label for="f-company">Company<input id="f-company" name="company" autocomplete="organization"></label>
+        <label for="f-crm">Current CRM
+          <select id="f-crm" name="crm">
+            <option>None yet / spreadsheets</option><option>HubSpot</option><option>Salesforce</option><option>Zoho CRM</option><option>Attio</option><option>Pipedrive</option><option>GoHighLevel</option><option>Other</option>
+          </select>
+        </label>
+        <label class="full" for="f-msg">What would you like to automate?<textarea id="f-msg" name="message" placeholder="For example: leads from our website and WhatsApp get lost, and follow-ups are done by hand."></textarea></label>
+        <div class="full"><button class="btn btn-primary" type="submit">Send message</button></div>
+        <p class="form-msg" id="form-msg" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top"><img class="logo logo-lg" src="assets/logo-full.png" alt="Sanwar Technologies" width="691" height="217"></a>
+        <p class="about">CRM setup, workflow automation and custom CRM development for growing businesses.</p>
+      </div>
+      <div><h4>Services</h4><ul><li><a href="#services">CRM Setup &amp; Migration</a></li><li><a href="#services">Workflow Automation</a></li><li><a href="#services">Custom CRM</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#process">Process</a></li><li><a href="#work">Work</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Get in touch</h4><ul><li><a href="https://cal.com/hamza-manzoor-peqlsi/15min" target="_blank" rel="noopener" data-book-call data-cal-link="hamza-manzoor-peqlsi/15min" data-cal-namespace="15min" data-cal-config='{"layout":"month_view"}'>Book a free call</a></li><li><a href="#contact">Contact form</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© <span id="yr">2026</span> Sanwar Technologies. All rights reserved.</span><span>Your business, on autopilot.</span></div>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   FILM CONFIG
+   When the chapter videos are ready they are converted into frames:
+     frames/frame_0001.webp ... frames/frame_NNNN.webp
+   Set FILM.frames to that count and the canvas plays them instead of
+   the built-in animated placeholder. CHAPTERS are the scroll fractions
+   where each chapter's frames start (used by the captions and ticks).
+   ===================================================================== */
+window.FILM = window.FILM || { frames: 402, path: "frames/frame_", ext: "webp", pad: 4 };
+const CHAPTERS = [0.0, 0.185, 0.369, 0.554, 0.739, 0.851];
+const FORM_ENDPOINT = ""; // e.g. a Formspree URL; leave empty in preview
+
+document.documentElement.classList.add("js");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $ = (s, r = document) => r.querySelector(s);
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const ss = (a, b, v) => { const t = clamp((v - a) / (b - a)); return t * t * (3 - 2 * t); };
+const lerp = (a, b, t) => a + (b - a) * t;
+
+/* ---------- scroll progress through the film ---------- */
+const film = $("#film"), canvas = $("#film-canvas"), ctx = canvas.getContext("2d");
+let W = 0, H = 0, DPR = 1, progress = 0, shown = 0;
+function filmProgress() {
+  const r = film.getBoundingClientRect();
+  const total = film.offsetHeight - innerHeight;
+  return clamp(-r.top / total);
+}
+function resize() {
+  DPR = Math.min(devicePixelRatio || 1, 2);
+  W = canvas.clientWidth; H = canvas.clientHeight;
+  canvas.width = Math.round(W * DPR); canvas.height = Math.round(H * DPR);
+}
+addEventListener("resize", resize); resize();
+
+/* ---------- captions + chapter ticks ---------- */
+const caps = [...document.querySelectorAll(".cap")];
+const ticks = [...document.querySelectorAll("#ticks li")];
+const hint = $("#hint"), nav = $("#nav"), scrimHero = $("#scrim-hero");
+const tl = $("#timeline"), steps = [...document.querySelectorAll(".step")];
+function updateUI(p) {
+  caps.forEach(c => c.classList.toggle("on", p >= +c.dataset.in && p < +c.dataset.out));
+  let ci = 0; CHAPTERS.forEach((s, i) => { if (p >= s + 0.015 || (i === 0)) ci = i; });
+  ticks.forEach((t, i) => t.classList.toggle("on", i === ci && p > 0.07));
+  hint.style.opacity = p > 0.02 ? 0 : 1;
+  scrimHero.style.opacity = p < 0.075 ? 1 : 0;
+}
+function onScroll() {
+  progress = filmProgress();
+  nav.classList.toggle("solid", scrollY > film.offsetHeight - innerHeight * 1.1 || progress > 0.08);
+  updateUI(progress);
+  timelineProgress();
+}
+addEventListener("scroll", onScroll, { passive: true });
+
+/* =====================================================================
+   VIDEO-FRAME MODE
+   ===================================================================== */
+const frames = [];
+let useFrames = FILM.frames > 0;
+if (useFrames) {
+  for (let i = 1; i <= FILM.frames; i++) {
+    const im = new Image();
+    im.decoding = "async";
+    im.src = FILM.path + String(i).padStart(FILM.pad, "0") + "." + FILM.ext;
+    frames.push(im);
+  }
+  frames[0].onerror = () => { useFrames = false; };
+}
+function drawFrame(p) {
+  let i = Math.round(p * (frames.length - 1));
+  // fall back to the nearest loaded frame
+  for (let d = 0; d < frames.length; d++) {
+    const a = frames[i - d], b = frames[i + d];
+    if (a && a.complete && a.naturalWidth) { i = i - d; break; }
+    if (b && b.complete && b.naturalWidth) { i = i + d; break; }
+  }
+  const im = frames[i]; if (!im || !im.naturalWidth) return;
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  ctx.fillStyle = "#07080b"; ctx.fillRect(0, 0, W, H);
+  // cover on wide screens, contain on tall screens so the subject stays in view
+  const ar = im.naturalWidth / im.naturalHeight, sar = W / H;
+  let w, h;
+  if (sar >= ar) { w = W; h = W / ar; } else { w = Math.max(W, H * ar * 0.62); h = w / ar; }
+  ctx.drawImage(im, (W - w) / 2, (H - h) / 2, w, h);
+}
+
+/* =====================================================================
+   PLACEHOLDER FILM (procedural, pseudo-3D canvas)
+   Mirrors the six chapters so the site feels finished before the
+   real videos arrive.
+   ===================================================================== */
+const PW = 560, PH = 350;                     // dashboard panel size (world units)
+let rand = (s => () => (s = (s * 16807) % 2147483647) / 2147483647)(7);
+const R = (a, b) => a + rand() * (b - a);
+
+const clutter = Array.from({ length: 74 }, (_, i) => {
+  const type = ["note", "sheet", "mail", "chat"][i % 4];
+  const th = R(0, Math.PI * 2), ph = Math.acos(R(-1, 1)), rad = R(260, 820);
+  return {
+    type, x: Math.sin(ph) * Math.cos(th) * rad * 1.4, y: Math.cos(ph) * rad * 0.7, z: Math.sin(ph) * Math.sin(th) * rad,
+    rx: R(-1, 1), ry: R(-1, 1), rz: R(-1, 1), sp: R(.2, .7), size: R(34, 62),
+    tu: R(-.42, .42), tv: R(-.38, .38), delay: R(0, .35)
+  };
+});
+const stars = Array.from({ length: 140 }, () => ({ x: R(-1600, 1600), y: R(-1000, 1000), z: R(600, 2200), a: R(.15, .6) }));
+const APPS = [
+  { name: "Email", x: -560, y: -170, z: 120, g: "mail" },
+  { name: "WhatsApp", x: -600, y: 120, z: -80, g: "chat" },
+  { name: "Web forms", x: -250, y: 320, z: 160, g: "form" },
+  { name: "Calendar", x: 570, y: -190, z: -60, g: "cal" },
+  { name: "Invoices", x: 610, y: 110, z: 140, g: "inv" },
+  { name: "Ads", x: 260, y: -330, z: 100, g: "ads" }
+];
+
+let camRY = 0, camRX = 0, F = 1, D = 1100, CX = 0, CY = 0;
+function rot(x, y, z) {
+  const cy = Math.cos(camRY), sy = Math.sin(camRY), cx = Math.cos(camRX), sx = Math.sin(camRX);
+  let X = x * cy + z * sy, Z = -x * sy + z * cy;
+  let Y = y * cx - Z * sx; Z = y * sx + Z * cx;
+  return [X, Y, Z];
+}
+function proj(x, y, z) {
+  const [X, Y, Z] = rot(x, y, z);
+  const s = F * D / (D + Z);
+  return [CX + X * s, CY + Y * s, s, Z];
+}
+function quad(pts, fill, stroke, lw = 1) {
+  ctx.beginPath();
+  pts.forEach((p, i) => (i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])));
+  ctx.closePath();
+  if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+  if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = lw; ctx.stroke(); }
+}
+// rect on a panel plane: u,v in panel units (0..PW, 0..PH), z plane, with panel offset
+function prect(u, v, w, h, z, off, fill, stroke) {
+  const x0 = u - PW / 2 + off.x, y0 = v - PH / 2 + off.y;
+  quad([proj(x0, y0, z), proj(x0 + w, y0, z), proj(x0 + w, y0 + h, z), proj(x0, y0 + h, z)], fill, stroke);
+}
+function rgba(a, c = "59,130,246") { return `rgba(${c},${clamp(a)})`; }
+
+/* card in space with its own rotation */
+function spaceCard(o, cx, cy, cz, size, a, t) {
+  const ang = t * o.sp;
+  const ca = Math.cos(o.rx * ang + o.rz), sa = Math.sin(o.rx * ang + o.rz);
+  const cb = Math.cos(o.ry * ang), sb = Math.sin(o.ry * ang);
+  const w = size, h = o.type === "note" ? size : size * 0.72;
+  const corners = [[-w / 2, -h / 2], [w / 2, -h / 2], [w / 2, h / 2], [-w / 2, h / 2]].map(([px, py]) => {
+    let x = px * ca - py * sa, y = px * sa + py * ca, z = 0;
+    const x2 = x * cb + z * sb, z2 = -x * sb + z * cb;
+    return proj(cx + x2, cy + y, cz + z2);
+  });
+  const tint = { note: "214,196,140", sheet: "150,200,170", mail: "170,190,230", chat: "160,220,190" }[o.type];
+  quad(corners, `rgba(${tint},${0.10 * a})`, `rgba(${tint},${0.55 * a})`, 1);
+  // tiny glyph lines
+  ctx.strokeStyle = `rgba(${tint},${0.5 * a})`; ctx.lineWidth = 1;
+  const L = (u1, v1, u2, v2) => {
+    const P = (u, v) => [corners[0][0] + (corners[1][0] - corners[0][0]) * u + (corners[3][0] - corners[0][0]) * v,
+                         corners[0][1] + (corners[1][1] - corners[0][1]) * u + (corners[3][1] - corners[0][1]) * v];
+    const a1 = P(u1, v1), a2 = P(u2, v2); ctx.beginPath(); ctx.moveTo(a1[0], a1[1]); ctx.lineTo(a2[0], a2[1]); ctx.stroke();
+  };
+  if (o.type === "mail") { L(0, 0, .5, .55); L(.5, .55, 1, 0); }
+  else if (o.type === "sheet") { L(0, .33, 1, .33); L(0, .66, 1, .66); L(.33, 0, .33, 1); L(.66, 0, .66, 1); }
+  else if (o.type === "note") { L(.18, .3, .82, .3); L(.18, .5, .7, .5); L(.18, .7, .5, .7); }
+  else { L(.2, .35, .8, .35); L(.2, .6, .6, .6); }
+}
+
+function glyph(g, x, y, r, a) {
+  ctx.save(); ctx.translate(x, y); ctx.strokeStyle = `rgba(220,232,255,${a})`; ctx.lineWidth = Math.max(1.2, r * 0.09); ctx.lineCap = "round"; ctx.lineJoin = "round";
+  const s = r * 0.5; ctx.beginPath();
+  if (g === "mail") { ctx.rect(-s, -s * .7, s * 2, s * 1.4); ctx.moveTo(-s, -s * .7); ctx.lineTo(0, s * .1); ctx.lineTo(s, -s * .7); }
+  else if (g === "chat") { ctx.arc(0, -s * .1, s * .9, Math.PI * .75, Math.PI * 2.55); ctx.lineTo(-s * .95, s * .9); ctx.closePath(); }
+  else if (g === "form") { ctx.rect(-s * .8, -s, s * 1.6, s * 2); ctx.moveTo(-s * .4, -s * .4); ctx.lineTo(s * .4, -s * .4); ctx.moveTo(-s * .4, 0); ctx.lineTo(s * .4, 0); ctx.moveTo(-s * .4, s * .4); ctx.lineTo(s * .1, s * .4); }
+  else if (g === "cal") { ctx.rect(-s, -s * .8, s * 2, s * 1.7); ctx.moveTo(-s, -s * .25); ctx.lineTo(s, -s * .25); ctx.moveTo(-s * .45, -s); ctx.lineTo(-s * .45, -s * .6); ctx.moveTo(s * .45, -s); ctx.lineTo(s * .45, -s * .6); }
+  else if (g === "inv") { ctx.moveTo(-s * .7, -s); ctx.lineTo(s * .7, -s); ctx.lineTo(s * .7, s); ctx.lineTo(s * .35, s * .75); ctx.lineTo(0, s); ctx.lineTo(-s * .35, s * .75); ctx.lineTo(-s * .7, s); ctx.closePath(); ctx.moveTo(-s * .3, -s * .35); ctx.lineTo(s * .3, -s * .35); ctx.moveTo(-s * .3, s * .05); ctx.lineTo(s * .3, s * .05); }
+  else { ctx.moveTo(-s, s * .3); ctx.lineTo(-s, -s * .3); ctx.lineTo(s * .2, -s * .3); ctx.lineTo(s, -s * .9); ctx.lineTo(s, s * .9); ctx.lineTo(s * .2, s * .3); ctx.closePath(); }
+  ctx.stroke(); ctx.restore();
+}
+
+function bez(a, c, b, t) { const u = 1 - t; return [u * u * a[0] + 2 * u * t * c[0] + t * t * b[0], u * u * a[1] + 2 * u * t * c[1] + t * t * b[1]]; }
+
+const TOASTS = ["New lead · Website form", "Deal moved · Proposal sent", "Follow-up email sent", "Invoice paid · Synced", "Meeting booked · Calendar"];
+
+function drawPlaceholder(p, t) {
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  ctx.fillStyle = "#07080b"; ctx.fillRect(0, 0, W, H);
+
+  const gather = ss(0.10, 0.30, p);
+  const panelA = ss(0.20, 0.32, p);
+  const explode = ss(0.35, 0.43, p) - ss(0.47, 0.53, p);
+  const connect = ss(0.54, 0.66, p);
+  const auto = ss(0.68, 0.74, p);
+  const calm = ss(0.84, 0.94, p);
+  const drift = reduce ? 0 : t;
+  // framing: centred for the opening, then the scene moves right/up to leave room for captions
+  const side = ss(0.06, 0.2, p);
+  if (W >= 900) {
+    F = Math.min(W / 1500, H / 900) * lerp(1.05, 0.78, side);
+    CX = W * lerp(0.5, 0.62, side); CY = H * lerp(0.5, 0.42, side);
+  } else {
+    F = lerp(Math.min(W / 700, H / 1100), Math.min(W / 1480, H / 1300), Math.max(connect, 1 - gather));
+    CX = W / 2; CY = H * lerp(0.5, 0.34, side);
+  }
+
+  camRY = lerp(-0.25, 0.32, ss(0, 0.5, p)) + explode * 0.38 + lerp(0, 0.0, calm) + Math.sin(drift * 0.25) * lerp(0.04, 0.16, calm) - connect * 0.3 + calm * 0.0;
+  camRX = 0.12 + explode * 0.22 - calm * 0.04;
+  D = 1100;
+
+  // background glow + stars
+  const gx = CX, gy = CY;
+  const g = ctx.createRadialGradient(gx, gy, 0, gx, gy, Math.max(W, H) * 0.55);
+  g.addColorStop(0, rgba(0.10 + panelA * 0.14 + auto * 0.05)); g.addColorStop(1, "rgba(7,8,11,0)");
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  for (const s of stars) {
+    const z = s.z; const sc = F * D / (D + z);
+    const x = CX + (s.x + Math.sin(drift * .05 + s.y) * 10) * sc, y = CY + s.y * sc;
+    ctx.fillStyle = `rgba(190,205,240,${s.a * (1 - gather * 0.4)})`; ctx.fillRect(x, y, 1.4, 1.4);
+  }
+
+  // clutter (chaos -> pulled into panel)
+  if (gather < 1) {
+    const items = clutter.map(o => {
+      const k = ss(o.delay * 0.6, o.delay * 0.6 + 0.65, gather);
+      const wob = reduce ? 0 : Math.sin(drift * o.sp + o.rx * 5) * 18;
+      const x = lerp(o.x + wob, o.tu * PW, k), y = lerp(o.y + wob * .6, o.tv * PH, k), z = lerp(o.z, 0, k);
+      return { o, x, y, z, k, zr: rot(x, y, z)[2] };
+    }).sort((a, b) => b.zr - a.zr);
+    for (const it of items) {
+      const a = (1 - it.k) * 0.95 * (it.zr > -900 ? 1 : 0.4);
+      if (a > 0.01) spaceCard(it.o, it.x, it.y, it.z, it.o.size * lerp(1, 0.4, it.k), a, drift + 3 + p * 12);
+    }
+  }
+
+  if (panelA <= 0.001) return;
+
+  // layers of the dashboard: 0 base, 1 contacts, 2 pipeline, 3 reports
+  const layers = [0, 1, 2, 3].map(i => ({ i, z: (i - 1.5) * -explode * 170, off: { x: 0, y: (i - 1.5) * explode * -22 } }));
+  const order = layers.slice().sort((a, b) => rot(0, 0, b.z)[2] - rot(0, 0, a.z)[2]);
+
+  // connection lines (behind panel when drawn first)
+  const panelEdge = (ax) => [ax.x < 0 ? -PW / 2 : PW / 2, clamp(ax.y, -PH / 2 + 30, PH / 2 - 30), 0];
+  const links = APPS.map((ap, i) => {
+    const e = panelEdge(ap);
+    const A = proj(ap.x, ap.y, ap.z), B = proj(e[0], e[1], e[2]);
+    const C = proj((ap.x + e[0]) / 2, (ap.y + e[1]) / 2 - 80, (ap.z + e[2]) / 2);
+    return { ap, A, B, C, k: ss(i * 0.09, i * 0.09 + 0.45, connect) };
+  });
+  ctx.lineCap = "round";
+  for (const L of links) {
+    if (L.k <= 0) continue;
+    ctx.beginPath(); ctx.moveTo(L.A[0], L.A[1]);
+    const n = 28; for (let j = 1; j <= n * L.k; j++) { const q = bez(L.A, L.C, L.B, j / n); ctx.lineTo(q[0], q[1]); }
+    ctx.strokeStyle = rgba(0.18 + 0.25 * auto); ctx.lineWidth = 6; ctx.stroke();
+    ctx.strokeStyle = rgba(0.75, "124,177,255"); ctx.lineWidth = 1.4; ctx.stroke();
+  }
+
+  // panel layers
+  const pa = panelA * (1 - 0.0);
+  for (const L of order) {
+    const z = L.z, off = L.off, la = pa;
+    if (L.i === 0) {
+      prect(0, 0, PW, PH, z, off, `rgba(16,22,38,${0.82 * la})`, rgba(0.6 * la, "124,177,255"));
+      prect(0, 0, PW, 34, z, off, `rgba(59,130,246,${0.10 * la})`, null);
+      [0, 1, 2].forEach(k => prect(14 + k * 14, 13, 8, 8, z, off, `rgba(200,215,245,${0.35 * la})`, null));
+      prect(PW - 150, 11, 136, 12, z, off, `rgba(200,215,245,${0.08 * la})`, null);
+    } else {
+      const lift = explode > 0.05 ? explode : 0;
+      if (lift) prect(0, 0, PW, PH, z, off, `rgba(20,30,55,${0.35 * lift * la})`, rgba(0.35 * lift * la, "124,177,255"));
+      if (L.i === 1) { // contacts column
+        prect(14, 48, 140, PH - 62, z, off, `rgba(255,255,255,${0.035 * la})`, null);
+        for (let r = 0; r < 7; r++) {
+          prect(24, 60 + r * 38, 22, 22, z, off, rgba((r === 0 && auto ? 0.9 : 0.35) * la, r === 0 && auto ? "59,130,246" : "150,170,210"), null);
+          prect(54, 63 + r * 38, 78 - (r % 3) * 14, 6, z, off, `rgba(220,230,250,${0.45 * la})`, null);
+          prect(54, 74 + r * 38, 50, 5, z, off, `rgba(220,230,250,${0.18 * la})`, null);
+        }
+      }
+      if (L.i === 2) { // pipeline
+        const cols = 4, cw = 78, x0 = 168;
+        for (let c = 0; c < cols; c++) {
+          prect(x0 + c * (cw + 8), 48, cw, PH - 62, z, off, `rgba(255,255,255,${0.025 * la})`, null);
+          prect(x0 + c * (cw + 8) + 8, 56, 40, 6, z, off, `rgba(124,177,255,${0.6 * la})`, null);
+          const n = [4, 3, 2, 2][c];
+          for (let r = 0; r < n; r++) prect(x0 + c * (cw + 8) + 6, 72 + r * 44, cw - 12, 36, z, off, `rgba(190,205,240,${0.10 * la})`, `rgba(190,205,240,${0.18 * la})`);
+        }
+        if (auto > 0) { // a deal card travelling across stages
+          const cyc = (drift * 0.35) % 4, col = Math.floor(cyc), f = ss(0.55, 0.95, cyc - col);
+          const cx = lerp(col, Math.min(col + 1, 3), f);
+          prect(x0 + cx * (cw + 8) + 6, 72 + 4 * 44 - 44 * 1.0 + (col === 3 ? 0 : 0), cw - 12, 36, z - 2, off, rgba(0.85 * auto * la), rgba(1 * auto * la, "190,215,255"));
+        }
+      }
+      if (L.i === 3) { // reports
+        const x0 = 520 - 172 + 168 - 168, bx = PW - 186;
+        prect(bx, 48, 172, 150, z, off, `rgba(255,255,255,${0.03 * la})`, null);
+        const grow = lerp(0.55, 1, calm) + (reduce ? 0 : Math.sin(drift * 1.2) * 0.02 * calm);
+        const hs = [0.35, 0.5, 0.42, 0.62, 0.72, 0.9];
+        hs.forEach((h, k) => {
+          const bh = 110 * h * (k > 2 ? grow : 1) * (0.6 + 0.4 * panelA);
+          prect(bx + 14 + k * 26, 186 - bh, 16, bh, z, off, rgba((k === 5 ? 0.95 : 0.55) * la), null);
+        });
+        prect(bx, 208, 172, PH - 222, z, off, `rgba(255,255,255,${0.03 * la})`, null);
+        for (let r = 0; r < 3; r++) {
+          const done = auto > 0 && r < 1 + Math.floor((drift * 0.5) % 3);
+          prect(bx + 12, 222 + r * 36, 14, 14, z, off, done ? rgba(0.9 * la) : null, rgba(0.7 * la, "150,170,210"));
+          prect(bx + 34, 226 + r * 36, 110 - r * 18, 6, z, off, `rgba(220,230,250,${0.35 * la})`, null);
+        }
+      }
+      // layer labels during assembly
+      if (explode > 0.2) {
+        const pt = proj(-PW / 2 - 18 + off.x, -PH / 2 + 10 + off.y, z);
+        ctx.font = `500 ${Math.max(10, 12 * F * 1.3)}px "JetBrains Mono",monospace`; ctx.textAlign = "right";
+        ctx.fillStyle = rgba(explode, "180,205,255");
+        ctx.fillText(["", "CONTACTS", "PIPELINE", "REPORTS"][L.i], pt[0], pt[1]);
+      }
+    }
+  }
+  if (explode > 0.2) {
+    const L0 = layers[0]; const pt = proj(-PW / 2 - 18 + L0.off.x, -PH / 2 + 10 + L0.off.y, L0.z);
+    ctx.fillStyle = rgba(explode, "180,205,255"); ctx.textAlign = "right"; ctx.fillText("TASKS", pt[0], pt[1]);
+  }
+
+  // app nodes
+  for (const L of links) {
+    if (L.k <= 0) continue;
+    const r = 30 * L.A[2] * 1.15;
+    ctx.beginPath(); ctx.arc(L.A[0], L.A[1], r * 1.9, 0, Math.PI * 2); ctx.fillStyle = rgba(0.10 * L.k); ctx.fill();
+    ctx.beginPath(); ctx.arc(L.A[0], L.A[1], r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(18,26,46,${0.95 * L.k})`; ctx.fill(); ctx.strokeStyle = rgba(0.8 * L.k, "124,177,255"); ctx.lineWidth = 1.4; ctx.stroke();
+    glyph(L.ap.g, L.A[0], L.A[1], r, 0.95 * L.k);
+    ctx.font = `500 ${Math.max(10, 11 * F * 1.4)}px "JetBrains Mono",monospace`; ctx.textAlign = "center";
+    ctx.fillStyle = `rgba(170,185,215,${0.85 * L.k})`; ctx.fillText(L.ap.name.toUpperCase(), L.A[0], L.A[1] + r + 18);
+  }
+
+  // automation pulses
+  if (auto > 0) {
+    links.forEach((L, i) => {
+      for (let m = 0; m < 2; m++) {
+        let q = ((drift * 0.45 + i * 0.37 + m * 0.5) % 1); if (i % 2) q = 1 - q;
+        const pt = bez(L.A, L.C, L.B, q);
+        const gr = ctx.createRadialGradient(pt[0], pt[1], 0, pt[0], pt[1], 16);
+        gr.addColorStop(0, `rgba(210,230,255,${auto})`); gr.addColorStop(1, "rgba(59,130,246,0)");
+        ctx.fillStyle = gr; ctx.beginPath(); ctx.arc(pt[0], pt[1], 16, 0, Math.PI * 2); ctx.fill();
+      }
+    });
+    // toast pills above panel
+    const top = proj(0, -PH / 2 - 46, 0);
+    const k = Math.floor((reduce ? 0 : drift) / 1.6) % TOASTS.length, ph = ((reduce ? 0.5 : drift) / 1.6) % 1;
+    const ta = auto * (1 - calm * 0.6) * Math.min(ss(0, .15, ph), 1 - ss(.8, 1, ph));
+    ctx.font = `500 ${Math.max(12, 15 * F * 1.25)}px "Instrument Sans",system-ui,sans-serif`; ctx.textAlign = "center";
+    const tw = ctx.measureText(TOASTS[k]).width + 44, th = 34 * Math.max(1, F * 1.15);
+    const ty = top[1] - (1 - ss(0, .2, ph)) * -10;
+    ctx.beginPath(); ctx.roundRect ? ctx.roundRect(top[0] - tw / 2, ty - th / 2, tw, th, th / 2) : ctx.rect(top[0] - tw / 2, ty - th / 2, tw, th);
+    ctx.fillStyle = `rgba(20,32,60,${0.9 * ta})`; ctx.fill(); ctx.strokeStyle = rgba(0.7 * ta, "124,177,255"); ctx.lineWidth = 1; ctx.stroke();
+    ctx.beginPath(); ctx.arc(top[0] - tw / 2 + 18, ty, 4, 0, Math.PI * 2); ctx.fillStyle = `rgba(74,222,128,${ta})`; ctx.fill();
+    ctx.fillStyle = `rgba(235,242,255,${ta})`; ctx.fillText(TOASTS[k], top[0] + 8, ty + 5);
+  }
+}
+
+/* ---------- render loop ---------- */
+const t0 = performance.now();
+function loop(now) {
+  shown += (progress - shown) * (reduce ? 1 : 0.14);
+  if (Math.abs(progress - shown) < 0.0002) shown = progress;
+  const p = shown;
+  if (useFrames && frames.some(f => f.complete && f.naturalWidth)) drawFrame(p); else drawPlaceholder(p, (now - t0) / 1000);
+  requestAnimationFrame(loop);
+}
+onScroll(); requestAnimationFrame(loop);
+
+/* ---------- process timeline fill ---------- */
+function timelineProgress() {
+  const r = tl.getBoundingClientRect();
+  const v = clamp((innerHeight * 0.75 - r.top) / (r.height + innerHeight * 0.25));
+  tl.style.setProperty("--tl", v.toFixed(3));
+  steps.forEach((s, i) => s.classList.toggle("lit", v >= i / (steps.length - 1) - 0.02 || v > 0.98));
+}
+
+/* ---------- reveal on scroll (content is visible without JS) ---------- */
+const reveals = [...document.querySelectorAll(".reveal")];
+if ("IntersectionObserver" in window && !reduce) {
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.remove("pre"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
+  reveals.forEach(el => { if (el.getBoundingClientRect().top > innerHeight) { el.classList.add("pre"); io.observe(el); } });
+}
+
+/* ---------- stat count-up ---------- */
+const statIO = "IntersectionObserver" in window && new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting || reduce) return; statIO.unobserve(e.target);
+  const el = e.target, n = +el.dataset.count, pre = el.dataset.prefix || "", suf = el.dataset.suffix || "", st = performance.now();
+  const tick = now => { const k = ss(0, 1, (now - st) / 1400); el.textContent = pre + Math.round(n * k).toLocaleString("en-US") + suf; if (k < 1) requestAnimationFrame(tick); };
+  requestAnimationFrame(tick);
+}), { threshold: 0.6 });
+if (statIO) document.querySelectorAll("[data-count]").forEach(el => statIO.observe(el));
+
+/* ---------- card hover glow ---------- */
+document.querySelectorAll(".card").forEach(c => c.addEventListener("pointermove", e => {
+  const r = c.getBoundingClientRect(); c.style.setProperty("--mx", (e.clientX - r.left) + "px"); c.style.setProperty("--my", (e.clientY - r.top) + "px");
+}));
+
+/* ---------- contact form ---------- */
+$("#contact-form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = e.target, msg = $("#form-msg");
+  if (!f.name.value.trim() || !/^\S+@\S+\.\S+$/.test(f.email.value)) { msg.textContent = "Please add your name and a valid email address."; return; }
+  if (!FORM_ENDPOINT) { msg.textContent = "Thanks, " + f.name.value.trim().split(" ")[0] + ". This preview isn't connected to an inbox yet, so the message wasn't sent."; return; }
+  msg.textContent = "Sending…";
+  try {
+    const r = await fetch(FORM_ENDPOINT, { method: "POST", headers: { Accept: "application/json" }, body: new FormData(f) });
+    msg.textContent = r.ok ? "Thanks! We'll reply within one business day." : "Something went wrong. Please email us directly.";
+    if (r.ok) f.reset();
+  } catch { msg.textContent = "We couldn't send that. Please check your connection or email us directly."; }
+});
+$("#yr").textContent = new Date().getFullYear();
+
+/* ---------- call booking (Cal.com) ----------
+   On the live site the Cal.com script loads and every "Book a free call"
+   button opens the booking popup. If the script can't load (ad blocker,
+   sandboxed preview), the buttons fall back to the booking page in a new tab. */
+const CAL_LINK = "hamza-manzoor-peqlsi/15min";
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; const sc = d.head.appendChild(d.createElement("script")); sc.onload = () => { C.__calReady = true; d.documentElement.classList.add("cal-ready"); }; sc.onerror = () => d.documentElement.classList.add("cal-failed"); setTimeout(() => d.documentElement.classList.add("cal-failed"), 6000); sc.src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+try {
+  Cal("init", "15min", { origin: "https://app.cal.com" });
+  Cal.config = Cal.config || {}; Cal.config.forwardQueryParams = true;
+  Cal.ns["15min"]("floatingButton", { calLink: CAL_LINK, buttonText: "Book a free call", buttonColor: "#3b82f6", config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" } });
+  Cal.ns["15min"]("inline", { elementOrSelector: "#my-cal-inline-15min", calLink: CAL_LINK, config: { layout: "month_view", useSlotsViewOnSmallScreen: "true", theme: "dark" } });
+  Cal.ns["15min"]("ui", { theme: "dark", hideEventTypeDetails: false, layout: "month_view", cssVarsPerTheme: { dark: { "cal-brand": "#3b82f6" }, light: { "cal-brand": "#3b82f6" } } });
+} catch (e) {}
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-book-call]");
+  if (!a || !window.__calReady) return;          // no popup available: open the booking page link
+  e.preventDefault(); e.stopPropagation();
+  Cal.ns["15min"]("modal", { calLink: CAL_LINK, config: { layout: "month_view" } });
+}, true);
+
+</script>
+
+</html>
