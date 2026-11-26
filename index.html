@@ -153,6 +153,26 @@ section.block{padding-block:clamp(90px,12vw,160px);position:relative;scroll-marg
 .case .result b{display:block;font:600 26px/1.1 var(--display);color:var(--fg);letter-spacing:-.03em}
 
 
+/* thumbnails for videos and documents */
+.shot{container-type:inline-size}
+.c-crm{--h1:#1e3a8a;--h2:#3b82f6}
+.c-automation{--h1:#312e81;--h2:#6366f1}
+.c-agents{--h1:#134e4a;--h2:#14b8a6}
+.c-vision{--h1:#3b0764;--h2:#a855f7}
+.shot.vid{background:radial-gradient(circle at 70% 20%,color-mix(in srgb,var(--h2) 45%,transparent),transparent 55%),linear-gradient(135deg,var(--h1),#07080b 80%);display:block}
+.shot.vid::before{content:"";position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1.2px) 0 0/14px 14px}
+.big-play{position:absolute;left:50%;top:44%;width:clamp(34px,18cqw,72px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.55);backdrop-filter:blur(4px)}
+.big-play::before{content:"";position:absolute;left:54%;top:50%;transform:translate(-50%,-50%);border-left:clamp(10px,5cqw,20px) solid #fff;border-top:clamp(6px,3cqw,12px) solid transparent;border-bottom:clamp(6px,3cqw,12px) solid transparent}
+.vid-title{position:absolute;left:7%;right:7%;bottom:8%;font:600 clamp(11px,6cqw,26px)/1.15 var(--display);letter-spacing:-.02em;color:#fff;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.src-badge{position:absolute;left:6%;top:7%;z-index:1;font:500 clamp(8px,3.4cqw,11px)/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:.6em .9em;border-radius:999px;background:rgba(7,8,11,.6);color:#dbe7ff;border:1px solid rgba(255,255,255,.2)}
+.shot.doc{background:linear-gradient(160deg,var(--h2),var(--h1) 70%)}
+.shot.doc .src-badge{left:auto;right:6%}
+.doc-page{position:absolute;left:12%;right:12%;top:16%;bottom:-8%;background:#f7f8fb;border-radius:3px 3px 0 0;box-shadow:0 10px 30px rgba(0,0,0,.35);padding:7% 8%;transform:rotate(-2deg);display:flex;flex-direction:column;gap:5%;overflow:hidden}
+.doc-kicker{font:500 clamp(6px,2.6cqw,10px)/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--h2)}
+.doc-title{font:700 clamp(9px,5cqw,22px)/1.12 var(--display);letter-spacing:-.02em;color:#121624;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.doc-lines{flex:1;min-height:12%;background:repeating-linear-gradient(#d8dce6 0 2px,transparent 2px 9px);opacity:.9}
+.doc-tools{font:500 clamp(6px,2.6cqw,10px)/1.2 var(--mono);color:#5a6274;text-transform:uppercase;letter-spacing:.06em}
+
 /* Work reel */
 .reel-wrap{position:relative}
 .reel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-block:8px 24px;padding-left:max(20px,calc((100vw - var(--wrap)) / 2 + 20px));padding-right:max(20px,calc((100vw - var(--wrap)) / 2 + 20px));scroll-padding-left:max(20px,calc((100vw - var(--wrap)) / 2 + 20px));scrollbar-width:none}
@@ -398,20 +418,22 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px;color:var(--mute
       <div class="head reveal">
         <span class="eyebrow">Work</span>
         <h2>Automations and AI we've built.</h2>
-        <p>Real projects, running in real businesses. Hover a card to watch it work.</p>
+        <p>CRM builds, automations and AI systems running in real businesses. Hover a card to preview it, or open it to watch the full walkthrough.</p>
       </div>
     </div>
     <div class="reel-wrap reveal">
       <div class="reel" id="reel" tabindex="0" aria-label="Recent projects">
 <!--REEL:start-->
+<a class="vcard" href="work.html#ghl-full-business"><div class="vthumb"><div class="shot vid c-crm" style="position:absolute;inset:0"><span class="src-badge">Video walkthrough</span><span class="big-play" aria-hidden="true"></span><b class="vid-title">A whole business run on GoHighLevel</b></div><span class="vtag" style="left:auto;right:12px">CRM</span></div><h3>A whole business run on GoHighLevel</h3><p>A client&#x27;s entire business set up, configured and automated in GHL, with AI agents, n8n, Referly and BillionMail.</p></a>
 <a class="vcard" href="work.html#marketing-agent"><div class="vthumb"><video muted loop playsinline preload="none" poster="work/marketing-agent.jpg" data-src="work/marketing-agent.mp4"></video><span class="vtag">Automation</span><span class="vplay" aria-hidden="true"></span></div><h3>A full marketing team in one AI agent</h3><p>One n8n agent writes content, creates images and video, and posts it across channels.</p></a>
+<a class="vcard" href="work.html#hubspot-cyber"><div class="vthumb"><div class="shot doc c-crm" style="position:absolute;inset:0"><div class="doc-page"><span class="doc-kicker">Case study · CRM</span><b class="doc-title">HubSpot implementation for a cybersecurity SaaS</b><span class="doc-lines"></span><span class="doc-tools">HubSpot</span></div><span class="src-badge">Document</span></div><span class="vtag">CRM</span></div><h3>HubSpot implementation for a cybersecurity SaaS</h3><p>End-to-end design of the Marketing, Sales and Service Hubs for a B2B cybersecurity company.</p></a>
 <a class="vcard" href="work.html#meeting-booking"><div class="vthumb"><video muted loop playsinline preload="none" poster="work/meeting-booking.jpg" data-src="work/meeting-booking.mp4"></video><span class="vtag">AI agent</span><span class="vplay" aria-hidden="true"></span></div><h3>AI meeting booking agent</h3><p>Voice and chat assistant that answers questions and books meetings into Google Calendar and Zoom.</p></a>
-<a class="vcard" href="work.html#blog-content"><div class="vthumb"><video muted loop playsinline preload="none" poster="work/blog-content.jpg" data-src="work/blog-content.mp4"></video><span class="vtag">Automation</span><span class="vplay" aria-hidden="true"></span></div><h3>Blog &amp; social content machine</h3><p>Topics in a Google Sheet become finished blog posts and social posts automatically.</p></a>
-<a class="vcard" href="work.html#hiring"><div class="vthumb"><video muted loop playsinline preload="none" poster="work/hiring.jpg" data-src="work/hiring.mp4"></video><span class="vtag">Automation</span><span class="vplay" aria-hidden="true"></span></div><h3>AI hiring automation</h3><p>Screens applicants, scores CVs and keeps the hiring team updated in Slack.</p></a>
+<a class="vcard" href="work.html#attio-setup"><div class="vthumb"><div class="shot vid c-crm" style="position:absolute;inset:0"><span class="src-badge">Video walkthrough</span><span class="big-play" aria-hidden="true"></span><b class="vid-title">Attio CRM setup and automation</b></div><span class="vtag" style="left:auto;right:12px">CRM</span></div><h3>Attio CRM setup and automation</h3><p>Workspace architecture, custom objects and pipelines, lead stages, automated outreach and reply detection, connected with n8n.</p></a>
 <a class="vcard" href="work.html#traffic"><div class="vthumb"><video muted loop playsinline preload="none" poster="work/traffic.jpg" data-src="work/traffic.mp4"></video><span class="vtag">Computer vision</span><span class="vplay" aria-hidden="true"></span></div><h3>Traffic analysis system</h3><p>Detects, tracks and counts vehicles from aerial footage in real time.</p></a>
-<a class="vcard" href="work.html#social-poster"><div class="vthumb"><video muted loop playsinline preload="none" poster="work/social-poster.jpg" data-src="work/social-poster.mp4"></video><span class="vtag">Automation</span><span class="vplay" aria-hidden="true"></span></div><h3>Content ideas to posts, with approvals</h3><p>Generates post ideas, waits for your approval, then publishes to social media.</p></a>
-<a class="vcard" href="work.html#rag-website"><div class="vthumb"><video muted loop playsinline preload="none" poster="work/rag-website.jpg" data-src="work/rag-website.mp4"></video><span class="vtag">AI agent</span><span class="vplay" aria-hidden="true"></span></div><h3>Website knowledge-base agent</h3><p>A RAG agent that answers from your website and documents, kept up to date automatically.</p></a>
-<a class="vcard" href="work.html#viral-shorts"><div class="vthumb"><video muted loop playsinline preload="none" poster="work/viral-shorts.jpg" data-src="work/viral-shorts.mp4"></video><span class="vtag">Automation</span><span class="vplay" aria-hidden="true"></span></div><h3>Automated viral shorts</h3><p>Story prompts, images, voice and video assembled into short-form videos with no manual editing.</p></a>
+<a class="vcard" href="work.html#mydose-health"><div class="vthumb"><div class="shot doc c-crm" style="position:absolute;inset:0"><div class="doc-page"><span class="doc-kicker">Case study · CRM</span><b class="doc-title">MyDose healthcare operating system</b><span class="doc-lines"></span><span class="doc-tools">n8n · Attio · Supabase</span></div><span class="src-badge">Document</span></div><span class="vtag">CRM</span></div><h3>MyDose healthcare operating system</h3><p>Patient management, clinical workflows, pharmacy, billing and reporting for a US healthcare provider, built on n8n, Attio, Supabase and GHL.</p></a>
+<a class="vcard" href="work.html#blog-content"><div class="vthumb"><video muted loop playsinline preload="none" poster="work/blog-content.jpg" data-src="work/blog-content.mp4"></video><span class="vtag">Automation</span><span class="vplay" aria-hidden="true"></span></div><h3>Blog &amp; social content machine</h3><p>Topics in a Google Sheet become finished blog posts and social posts automatically.</p></a>
+<a class="vcard" href="work.html#jaytech-ghl"><div class="vthumb"><div class="shot vid c-crm" style="position:absolute;inset:0"><span class="src-badge">Loom walkthrough</span><span class="big-play" aria-hidden="true"></span><b class="vid-title">Multi-client GoHighLevel with AI agents</b></div><span class="vtag" style="left:auto;right:12px">CRM</span></div><h3>Multi-client GoHighLevel with AI agents</h3><p>JayTech AI&#x27;s GHL setup: AI voice and chat agents, omnichannel workflows, SMS and email automation, and the website builder.</p></a>
+<a class="vcard" href="work.html#novasales-zoho"><div class="vthumb"><div class="shot doc c-crm" style="position:absolute;inset:0"><div class="doc-page"><span class="doc-kicker">Case study · CRM</span><b class="doc-title">NovaSales: Zoho CRM implementation</b><span class="doc-lines"></span><span class="doc-tools">Zoho · Zapier</span></div><span class="src-badge">Document</span></div><span class="vtag">CRM</span></div><h3>NovaSales: Zoho CRM implementation</h3><p>Zoho CRM set up and automated for a sales agency, integrated with its other tools through Zapier.</p></a>
 <!--REEL:end-->
       </div>
     </div>
@@ -925,8 +947,8 @@ document.querySelectorAll(".card").forEach(c => c.addEventListener("pointermove"
 (() => {
   const reel = $("#reel"); if (!reel) return;
   const cards = [...reel.querySelectorAll(".vcard")];
-  const play = c => { const v = c.querySelector("video"); if (!v.src) v.src = v.dataset.src; v.play().then(() => c.classList.add("playing")).catch(() => {}); };
-  const stop = c => { const v = c.querySelector("video"); v.pause(); c.classList.remove("playing"); };
+  const play = c => { const v = c.querySelector("video"); if (!v) return; if (!v.src) v.src = v.dataset.src; v.play().then(() => c.classList.add("playing")).catch(() => {}); };
+  const stop = c => { const v = c.querySelector("video"); if (v) v.pause(); c.classList.remove("playing"); };
   const hover = matchMedia("(hover: hover)").matches;
   if (hover) cards.forEach(c => { c.addEventListener("mouseenter", () => play(c)); c.addEventListener("mouseleave", () => stop(c)); c.addEventListener("focus", () => play(c)); c.addEventListener("blur", () => stop(c)); });
   else if ("IntersectionObserver" in window && !reduce) {
