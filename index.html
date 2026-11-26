@@ -471,12 +471,16 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px;color:var(--mute
           <h2>Tell us what's slowing you down.</h2>
           <p>We reply within one business day.</p>
         </div>
-        <!-- EDIT: put your real email and WhatsApp number here -->
-        <div class="row"><span>Email</span><div>hello@sanwartechnologies.com</div></div>
-        <div class="row"><span>WhatsApp</span><div>+00 000 000 0000</div></div>
+                <div class="row"><span>Email</span><a class="social" href="mailto:hamzamanzoor017@gmail.com">hamzamanzoor017@gmail.com</a></div>
+        <div class="row"><span>WhatsApp</span><a class="social" href="https://wa.me/923034105303" target="_blank" rel="noopener">+92 303 4105303</a></div>
         <div class="row"><span>Instagram</span><a class="social" href="https://www.instagram.com/sanwartechnologies" target="_blank" rel="noopener"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" class="dot"/></svg>@sanwartechnologies</a></div>
       </div>
-      <form id="contact-form" class="reveal" novalidate>
+      <form id="contact-form" class="reveal" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New enquiry from sanwar website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_next" id="f-next" value="">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <label for="f-name">Name<input id="f-name" name="name" autocomplete="name" required></label>
         <label for="f-email">Work email<input id="f-email" name="email" type="email" autocomplete="email" required></label>
         <label for="f-company">Company<input id="f-company" name="company" autocomplete="organization"></label>
@@ -519,7 +523,8 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px;color:var(--mute
    ===================================================================== */
 window.FILM = window.FILM || { frames: 402, path: "frames/frame_", ext: "webp", pad: 4 };
 const CHAPTERS = [0.0, 0.185, 0.369, 0.554, 0.739, 0.851];
-const FORM_ENDPOINT = ""; // e.g. a Formspree URL; leave empty in preview
+/* Contact form: sent by FormSubmit.co to this address, with a CAPTCHA check step. */
+const FORM_ENDPOINT = "https://formsubmit.co/hamzamanzoor017@gmail.com";
 
 document.documentElement.classList.add("js");
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -906,18 +911,23 @@ document.querySelectorAll(".card").forEach(c => c.addEventListener("pointermove"
 }));
 
 /* ---------- contact form ---------- */
-$("#contact-form").addEventListener("submit", async e => {
-  e.preventDefault();
-  const f = e.target, msg = $("#form-msg");
-  if (!f.name.value.trim() || !/^\S+@\S+\.\S+$/.test(f.email.value)) { msg.textContent = "Please add your name and a valid email address."; return; }
-  if (!FORM_ENDPOINT) { msg.textContent = "Thanks, " + f.name.value.trim().split(" ")[0] + ". This preview isn't connected to an inbox yet, so the message wasn't sent."; return; }
-  msg.textContent = "Sending…";
-  try {
-    const r = await fetch(FORM_ENDPOINT, { method: "POST", headers: { Accept: "application/json" }, body: new FormData(f) });
-    msg.textContent = r.ok ? "Thanks! We'll reply within one business day." : "Something went wrong. Please email us directly.";
-    if (r.ok) f.reset();
-  } catch { msg.textContent = "We couldn't send that. Please check your connection or email us directly."; }
-});
+(() => {
+  const f = $("#contact-form"), msg = $("#form-msg");
+  const inPreview = window.self !== window.top;   // claude.ai preview runs in a frame and can't post forms
+  if (new URLSearchParams(location.search).get("sent") === "1") {
+    msg.textContent = "Thanks! Your message was sent. We'll reply within one business day.";
+    history.replaceState(null, "", location.pathname + "#contact");
+  }
+  f.addEventListener("submit", e => {
+    e.preventDefault();
+    if (!f.name.value.trim() || !/^\S+@\S+\.\S+$/.test(f.email.value)) { msg.textContent = "Please add your name and a valid email address."; return; }
+    if (inPreview) { msg.textContent = "Form works on the live site. This preview can't send messages."; return; }
+    $("#f-next").value = location.origin + location.pathname + "?sent=1#contact";
+    f.action = FORM_ENDPOINT;
+    msg.textContent = "Sending… you'll be asked to confirm you're not a robot.";
+    f.submit();
+  });
+})();
 $("#yr").textContent = new Date().getFullYear();
 
 /* ---------- call booking (Cal.com) ----------
