@@ -29,3 +29,8 @@ Push this folder to a GitHub repository and enable GitHub Pages (Settings > Page
 ## Call booking (Cal.com)
 Every "Book a free call" button opens the Cal.com popup for `hamza-manzoor-peqlsi/15min`, and a floating "Book a free call" button sits in the corner. To change the calendar, edit `CAL_LINK` and the `data-cal-link` attributes in `index.html`. If the Cal.com script is blocked (ad blockers, the claude.ai preview), the buttons open the booking page in a new tab instead.
 The Contact area also shows the Cal.com calendar inline (the `#book` section), in dark mode. If Cal.com can't load, a button to open the booking page appears instead.
+
+## Work section and portfolio page
+- Homepage "Work" shows a scrolling reel of the first 8 projects; "View all work" opens `work.html`.
+- `work.html` has category tabs and a pinned-board gallery. Click any frame to watch the clip larger.
+- Clips live in `work/` (14-second compressed previews + poster images). Project titles, descriptions and categories are generated from `projects.json` in the source files.
